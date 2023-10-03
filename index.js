@@ -1,40 +1,35 @@
-const hq = 42;
-
+//Solution 1
 function distanceFromHqInBlocks (pickUp){
-    if(pickUp>=42){
-        return pickUp - hq;
-    }else{
-        return hq - pickUp;
-    }
-    
+    const hq = 42;
+    const blocks = Math.abs(hq  - pickUp);
+    return blocks;
 }
 
-function distanceFromHqInFeet(){
-    return distanceFromHqInBlocks(50) * 264;
-    
+//Solution 2
+function distanceFromHqInFeet(pickUp) {
+    return distanceFromHqInBlocks(pickUp) *264;
 }
+
+//Solution 3
 
 function distanceTravelledInFeet(start, destination){
-    if(start>=destination){
-        return (start - destination)*264;
-    }else{
-        return (destination-start)*264;
-    }
+    return Math.abs(start - destination) * 264;
 }
 
+//Solution 4
 function calculatesFarePrice(start, destination){
+    const chargable = distanceTravelledInFeet(start, destination) - 400;
+    
+    if (distanceTravelledInFeet(start, destination) <= 400){
+        return 0;   
 
-    if (distanceTravelledInFeet() <= 400){
-        return distanceTravelledInFeet() * 0;
+    }else if(distanceTravelledInFeet(start, destination)> 400 && distanceTravelledInFeet(start, destination) <=2000){
+        return (distanceTravelledInFeet(start,destination) - 400) * 0.02;
 
-    }else if (distanceTravelledInFeet() > 400 && distanceTravelledInFeet() <= 2000){
-        return distanceTravelledInFeet() * 0.2;
-
-    }else if(distanceTravelledInFeet() > 2000 && distanceTravelledInFeet() <= 2500 ){
+    } else if(distanceTravelledInFeet(start, destination) > 2000 && distanceTravelledInFeet(start, destination) <=2500 ) {
         return 25;
 
-    }else{
+    } else {
         return "cannot travel that far";
     }
 }
-
