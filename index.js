@@ -11,22 +11,21 @@ function distanceFromHqInFeet(pickUp) {
 }
 
 //Solution 3
-
 function distanceTravelledInFeet(start, destination){
     return Math.abs(start - destination) * 264;
 }
 
 //Solution 4
 function calculatesFarePrice(start, destination){
-    const chargable = distanceTravelledInFeet(start, destination) - 400;
+    const chargable = distanceTravelledInFeet(start, destination);
     
-    if (distanceTravelledInFeet(start, destination) <= 400){
+    if (chargable <= 400)  {
         return 0;   
 
-    }else if(distanceTravelledInFeet(start, destination)> 400 && distanceTravelledInFeet(start, destination) <=2000){
-        return (distanceTravelledInFeet(start,destination) - 400) * 0.02;
+    }else if(chargable > 400 && chargable <= 2000){
+        return (chargable - 400) * 0.02;
 
-    } else if(distanceTravelledInFeet(start, destination) > 2000 && distanceTravelledInFeet(start, destination) <=2500 ) {
+    } else if(chargable > 2000 && chargable <=2500 ) {
         return 25;
 
     } else {
