@@ -27,7 +27,7 @@ function calculatesFarePrice(start, destination){
 
     } else if(chargable > 2000 && chargable <=2500) {
         return 25;
-
+        
     } else {
         return "cannot travel that far";
     }
