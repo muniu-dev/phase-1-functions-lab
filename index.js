@@ -25,7 +25,7 @@ function calculatesFarePrice(start, destination){
     }else if(chargable > 400 && chargable <= 2000){
         return (chargable - 400) * 0.02;
 
-    } else if(chargable > 2000 && chargable <=2500 ) {
+    } else if(chargable > 2000 && chargable <=2500) {
         return 25;
 
     } else {
